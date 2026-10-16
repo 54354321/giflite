@@ -1,0 +1,6 @@
+<resources>
+    <color name="page">#F5F6F2</color><color name="surface">#FFFFFF</color>
+    <color name="ink">#1C2B25</color><color name="muted">#637067</color>
+    <color name="accent">#16755D</color><color name="on_accent">#FFFFFF</color><color name="soft">#E9F4ED</color>
+    <color name="icon_background">#16755D</color><color name="icon_foreground">#FFFFFF</color>
+</resources>

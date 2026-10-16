@@ -1,0 +1,1 @@
+<resources><style name="OptionsAnimation"><item name="android:windowEnterAnimation">@anim/control_enter</item><item name="android:windowExitAnimation">@anim/control_exit</item></style><style name="SettingsAnimation"><item name="android:windowEnterAnimation">@anim/settings_enter</item><item name="android:windowExitAnimation">@anim/settings_exit</item></style></resources>

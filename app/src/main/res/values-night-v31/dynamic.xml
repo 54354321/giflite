@@ -1,0 +1,8 @@
+<resources>
+    <style name="DynamicControls">
+        <item name="android:colorAccent">@android:color/system_accent1_200</item>
+        <item name="android:colorControlActivated">@android:color/system_accent1_200</item>
+        <item name="android:colorControlHighlight">@android:color/system_accent1_700</item>
+        <item name="android:textColorHighlight">@android:color/system_accent1_700</item>
+    </style>
+</resources>
