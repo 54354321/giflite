@@ -90,7 +90,7 @@ done
 - 测试中的设备指纹分辨率已泛化为通用值：原先沿用了真实设备的竖屏分辨率，现统一为常见竖屏基准 `1080×2400`；`GeometryTest` 的等比适配断言期望值相应改为 `576×1280`。`EncoderTest` 原本就使用 1080×2400，未改动。改这些常量时注意两者必须保持同一个长宽比，否则断言会失败。
 - 删除了内部开发过程的构建脚本、版本更新日志、截图反馈记录和本机绝对路径。
 - 仓库不包含任何签名密钥、口令或凭据。`.gitignore` 已覆盖 `*.jks`/`*.keystore`/`local.properties` 等常见泄漏点。
-- **应用包名已从内部的 `cn.giflite` 改为 `com.izumikonata.giflite`**，目的是切断公开源码与既有渠道安装包之间的直接关联。改动涉及 Java 包目录结构、`package` 声明、测试 import、`AndroidManifest.xml` 的 `package` 与 `authorities`、`build.gradle` 的 `namespace`/`applicationId`，以及 `tests/preview_regression.py` 中内嵌的源码路径。**注意：改包名后构建出的 APK 与旧版签名/包名均不兼容，已安装旧版的设备必须先卸载。**
+- 全仓库的旧包名标识已彻底替换为 `com.izumikonata.giflite`，目的是切断公开源码与既有渠道安装包之间的直接关联。改动涉及 Java 包目录结构、`package` 声明、测试 import、`AndroidManifest.xml` 的 `package` 与 `authorities`、`build.gradle` 的 `namespace`/`applicationId`，以及 `tests/preview_regression.py` 中内嵌的源码路径。**注意：改包名后构建出的 APK 与旧版签名/包名均不兼容，已安装旧版的设备必须先卸载。**
 
 提交前建议自检（关键词清单刻意不写进本文件，避免本文件自身成为线索）：
 ```sh
