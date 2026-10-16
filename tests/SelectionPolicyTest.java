@@ -1,4 +1,4 @@
-import cn.giflite.SelectionPolicy;
+import com.izumikonata.giflite.SelectionPolicy;
 import java.util.Random;
 
 public final class SelectionPolicyTest {

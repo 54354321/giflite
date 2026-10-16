@@ -1,4 +1,4 @@
-package cn.giflite;
+package com.izumikonata.giflite;
 
 import android.content.*;
 import android.database.*;

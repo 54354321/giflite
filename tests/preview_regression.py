@@ -33,7 +33,7 @@ public class MediaPlayer {
  public void setOnPreparedListener(OnPreparedListener l){prepared=l;}public void setOnCompletionListener(OnCompletionListener l){complete=l;}public void setOnErrorListener(OnErrorListener l){error=l;}public void setOnVideoSizeChangedListener(OnVideoSizeChangedListener l){}public void setOnSeekCompleteListener(OnSeekCompleteListener l){seek=l;}
 }
 """,
-"cn/giflite/PreviewRegression.java": """package cn.giflite;
+"com/izumikonata/giflite/PreviewRegression.java": """package com.izumikonata.giflite;
 import android.media.MediaPlayer;import android.content.Context;import android.net.Uri;import android.os.Handler;
 public class PreviewRegression {
  static int checks;static void check(boolean b){checks++;if(!b)throw new AssertionError("check "+checks);}
@@ -58,6 +58,6 @@ public class PreviewRegression {
 }
 for name, content in stubs.items():
     f=out/name; f.parent.mkdir(parents=True, exist_ok=True); f.write_text(content, encoding="utf-8")
-source=Path(__file__).resolve().parents[1]/"app/src/main/java/cn/giflite/RoundedVideoView.java"
+source=Path(__file__).resolve().parents[1]/"app/src/main/java/com/izumikonata/giflite/RoundedVideoView.java"
 subprocess.run([str(jdk/"bin/javac.exe"),"-encoding","UTF-8","-d",str(out),*map(str,(out/n for n in stubs)),str(source)],check=True)
-subprocess.run([str(jdk/"bin/java.exe"),"-cp",str(out),"cn.giflite.PreviewRegression"],check=True)
+subprocess.run([str(jdk/"bin/java.exe"),"-cp",str(out),"com.izumikonata.giflite.PreviewRegression"],check=True)

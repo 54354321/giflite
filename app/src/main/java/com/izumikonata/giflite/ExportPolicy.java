@@ -1,4 +1,4 @@
-package cn.giflite;
+package com.izumikonata.giflite;
 
 public final class ExportPolicy {
     private ExportPolicy(){}

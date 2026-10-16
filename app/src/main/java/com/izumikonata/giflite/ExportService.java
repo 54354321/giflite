@@ -1,4 +1,4 @@
-package cn.giflite;
+package com.izumikonata.giflite;
 
 import android.app.*;
 import android.content.*;
@@ -13,7 +13,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 /** Owns the export, independently of Activity lifetime and configuration changes. */
 public final class ExportService extends Service {
-    public static final String CHANNEL="gif_export", CANCEL="cn.giflite.CANCEL", OPEN="cn.giflite.OPEN_EXPORT";
+    public static final String CHANNEL="gif_export", CANCEL="com.izumikonata.giflite.CANCEL", OPEN="com.izumikonata.giflite.OPEN_EXPORT";
     private static final int NOTICE=41;
     private static final long MAX_RUNTIME=2*60*60*1000L;
     public static volatile boolean alive;

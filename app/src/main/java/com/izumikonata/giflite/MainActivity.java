@@ -1,4 +1,4 @@
-package cn.giflite;
+package com.izumikonata.giflite;
 
 import android.app.*;
 import android.content.*;
@@ -311,7 +311,7 @@ public final class MainActivity extends Activity {
             }
         });
     }
-    private void shareResult(){if(result==null)return;Uri u=Uri.parse("content://cn.giflite.result/"+result.getName());Intent i=new Intent(Intent.ACTION_SEND);i.setType("image/gif");i.putExtra(Intent.EXTRA_STREAM,u);i.setClipData(ClipData.newUri(getContentResolver(),"GIF",u));i.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);try{startActivity(Intent.createChooser(i,"分享 GIF"));}catch(ActivityNotFoundException e){status.setText("没有可用的分享应用，请先保存到相册。");}}
+    private void shareResult(){if(result==null)return;Uri u=Uri.parse("content://com.izumikonata.giflite.result/"+result.getName());Intent i=new Intent(Intent.ACTION_SEND);i.setType("image/gif");i.putExtra(Intent.EXTRA_STREAM,u);i.setClipData(ClipData.newUri(getContentResolver(),"GIF",u));i.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);try{startActivity(Intent.createChooser(i,"分享 GIF"));}catch(ActivityNotFoundException e){status.setText("没有可用的分享应用，请先保存到相册。");}}
     private void stopGif(){Drawable d=gif.getDrawable();if(d instanceof AnimatedImageDrawable)((AnimatedImageDrawable)d).stop();gif.setImageDrawable(null);}
     protected void onSaveInstanceState(Bundle b){saveForm();b.putString("processToken",PROCESS_TOKEN);b.putBoolean("displayResult",resultCard.getVisibility()==View.VISIBLE);b.putString("seenJob",seenJob);b.putParcelable("pendingExport",pendingExport);b.putString("pendingJob",pendingJob);b.putLong("pendingSince",pendingSince);super.onSaveInstanceState(b);}
     protected void onPause(){saveForm();handler.removeCallbacks(poll);super.onPause();pauseSelection();Drawable d=gif.getDrawable();if(d instanceof AnimatedImageDrawable)((AnimatedImageDrawable)d).stop();}

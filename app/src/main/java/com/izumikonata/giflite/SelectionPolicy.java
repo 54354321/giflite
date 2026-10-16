@@ -1,4 +1,4 @@
-package cn.giflite;
+package com.izumikonata.giflite;
 
 /** One interval, in seconds, shared by touch, keyboard and precise inputs. */
 public final class SelectionPolicy {

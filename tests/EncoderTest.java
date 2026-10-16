@@ -1,4 +1,4 @@
-import cn.giflite.*;
+import com.izumikonata.giflite.*;
 import java.io.*;
 import java.util.*;
 

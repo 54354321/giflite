@@ -1,4 +1,4 @@
-import cn.giflite.UiPolicy;
+import com.izumikonata.giflite.UiPolicy;
 public class UiPolicyTest {
     private static int count;
     private static void check(boolean ok,String why){count++;if(!ok)throw new AssertionError(why);}

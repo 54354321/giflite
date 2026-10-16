@@ -7,7 +7,7 @@ Java 测试是独立 main 程序，不属于 Android Gradle 的 instrumentation 
 - 源码：ColorPolicy、ExportPolicy、GifEncoder、SelectionPolicy、TimelineTouchPolicy、UiPolicy。
 - 测试：ColorPolicyTest、GeometryTest、SelectionPolicyTest、TimelineTouchTest、UiPolicyTest、EncoderTest、SizeTest。
 
-对应文件分别位于 `app/src/main/java/cn/giflite` 与 `tests`。运行 EncoderTest 和 SizeTest 前创建 `work` 目录；两者的测试 GIF 写入该目录，已在 .gitignore 中排除。
+对应文件分别位于 `app/src/main/java/com/izumikonata/giflite` 与 `tests`。运行 EncoderTest 和 SizeTest 前创建 `work` 目录；两者的测试 GIF 写入该目录，已在 .gitignore 中排除。
 
 Python 检查：
 

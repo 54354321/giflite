@@ -1,4 +1,4 @@
-import cn.giflite.ColorPolicy;
+import com.izumikonata.giflite.ColorPolicy;
 
 public final class ColorPolicyTest {
     private static int checks;

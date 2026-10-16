@@ -2,13 +2,13 @@
 
 本文件面向后续接手本项目的 AI 助手（而非人类用户）。目的是让你在不重新翻遍全仓库的情况下，快速建立准确的工程认知，避免重复推导和重复踩坑。
 
-阅读顺序建议：本文件 → `README.md` → `docs/TESTING.md` → `app/src/main/java/cn/giflite/MainActivity.java`。
+阅读顺序建议：本文件 → `README.md` → `docs/TESTING.md` → `app/src/main/java/com/izumikonata/giflite/MainActivity.java`。
 
 ---
 
 ## 1. 项目一句话定位
 
-`cn.giflite` / 轻转 GIF：一个**完全离线**的 Android 视频转 GIF 工具。单 Activity，原生 Java + 原生 View 体系，**零第三方运行时依赖**（没有 Compose、没有 Material Components 运行库、没有 Kotlin）。
+`com.izumikonata.giflite` / 轻转 GIF：一个**完全离线**的 Android 视频转 GIF 工具。单 Activity，原生 Java + 原生 View 体系，**零第三方运行时依赖**（没有 Compose、没有 Material Components 运行库、没有 Kotlin）。
 
 工程约束（务必遵守，改动前先确认）：
 - `minSdk 29`（Android 10），`targetSdk 35`，`compileSdk 35`，JDK 17。
@@ -40,7 +40,7 @@
 |---|---|
 | `MainActivity` | 唯一 Activity。表单状态保存、预览挂载、时间轴联动、主题切换 |
 | `ExportService` | 前台服务，承载实际转换。Android 15+ 用 `mediaProcessing` 类型，旧版用 `dataSync` |
-| `ResultProvider` | `ContentProvider`，`authorities="cn.giflite.result"`，用于把结果文件以 content URI 提供给分享/保存，`grantUriPermissions=true` |
+| `ResultProvider` | `ContentProvider`，`authorities="com.izumikonata.giflite.result"`，用于把结果文件以 content URI 提供给分享/保存，`grantUriPermissions=true` |
 | `RoundedVideoView` | TextureView 预览，做 8dp 圆角裁切（仅 UI 效果，不影响导出） |
 | `RangeTimeline` | 自绘双端时间轴控件 |
 | `ExpressiveControls` / `ExpressiveSlider` / `AnimatedSpinner` / `SelectBackground` / `AppPalette` | 自定义绘制控件与色板 |
@@ -71,7 +71,7 @@
 JDK=<JDK17目录>
 mkdir -p verify/classes work
 "$JDK/bin/javac" -encoding UTF-8 -d verify/classes \
-  app/src/main/java/cn/giflite/{ColorPolicy,ExportPolicy,GifEncoder,SelectionPolicy,TimelineTouchPolicy,UiPolicy}.java \
+  app/src/main/java/com/izumikonata/giflite/{ColorPolicy,ExportPolicy,GifEncoder,SelectionPolicy,TimelineTouchPolicy,UiPolicy}.java \
   tests/{ColorPolicyTest,GeometryTest,SelectionPolicyTest,TimelineTouchTest,UiPolicyTest,EncoderTest,SizeTest}.java
 for T in GeometryTest UiPolicyTest ColorPolicyTest TimelineTouchTest SelectionPolicyTest; do
   "$JDK/bin/java" -cp verify/classes "$T"
@@ -90,6 +90,7 @@ done
 - 测试中的设备指纹分辨率已泛化为通用值：原先沿用了真实设备的竖屏分辨率，现统一为常见竖屏基准 `1080×2400`；`GeometryTest` 的等比适配断言期望值相应改为 `576×1280`。`EncoderTest` 原本就使用 1080×2400，未改动。改这些常量时注意两者必须保持同一个长宽比，否则断言会失败。
 - 删除了内部开发过程的构建脚本、版本更新日志、截图反馈记录和本机绝对路径。
 - 仓库不包含任何签名密钥、口令或凭据。`.gitignore` 已覆盖 `*.jks`/`*.keystore`/`local.properties` 等常见泄漏点。
+- **应用包名已从内部的 `cn.giflite` 改为 `com.izumikonata.giflite`**，目的是切断公开源码与既有渠道安装包之间的直接关联。改动涉及 Java 包目录结构、`package` 声明、测试 import、`AndroidManifest.xml` 的 `package` 与 `authorities`、`build.gradle` 的 `namespace`/`applicationId`，以及 `tests/preview_regression.py` 中内嵌的源码路径。**注意：改包名后构建出的 APK 与旧版签名/包名均不兼容，已安装旧版的设备必须先卸载。**
 
 提交前建议自检（关键词清单刻意不写进本文件，避免本文件自身成为线索）：
 ```sh

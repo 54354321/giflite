@@ -1,4 +1,4 @@
-import cn.giflite.ExportPolicy;
+import com.izumikonata.giflite.ExportPolicy;
 
 public final class GeometryTest {
     private static int checks;

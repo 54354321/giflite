@@ -1,7 +1,7 @@
 plugins { id 'com.android.application' }
 android {
-    namespace 'cn.giflite'
+    namespace 'com.izumikonata.giflite'
     compileSdk 35
-    defaultConfig { applicationId 'cn.giflite'; minSdk 29; targetSdk 35; versionCode 11; versionName '0.5.4' }
+    defaultConfig { applicationId 'com.izumikonata.giflite'; minSdk 29; targetSdk 35; versionCode 11; versionName '0.5.4' }
     compileOptions { sourceCompatibility JavaVersion.VERSION_1_8; targetCompatibility JavaVersion.VERSION_1_8 }
 }

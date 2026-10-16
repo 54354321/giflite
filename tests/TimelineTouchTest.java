@@ -1,5 +1,5 @@
-import cn.giflite.TimelineTouchPolicy;
-import cn.giflite.SelectionPolicy;
+import com.izumikonata.giflite.TimelineTouchPolicy;
+import com.izumikonata.giflite.SelectionPolicy;
 
 public class TimelineTouchTest {
     static int checks;

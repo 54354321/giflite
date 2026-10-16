@@ -1,4 +1,4 @@
-package cn.giflite;
+package com.izumikonata.giflite;
 
 /** Pure policies shared by the UI and regression tests. */
 public final class UiPolicy {

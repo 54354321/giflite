@@ -42,7 +42,7 @@ Release 签名需自行配置；仓库不包含发布密钥或签名配置。自
 │   ├── build.gradle
 │   └── src/main/
 │       ├── AndroidManifest.xml
-│       ├── java/cn/giflite/   # 界面、预览、GIF 编码、后台任务
+│       ├── java/com/izumikonata/giflite/   # 界面、预览、GIF 编码、后台任务
 │       └── res/              # 主题、图标、动画
 ├── tests/                    # 独立 Java 与 Python 检查
 ├── docs/
